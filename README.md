@@ -32,7 +32,7 @@ pip install requests
 
 ```bash
 # Repository klonen
-git clone https://github.com/yourusername/mastodon-instance-analyzer.git
+git clone https://github.com/sozialwelten/MastodonInstanceAnalyzer.git
 cd mastodon-instance-analyzer
 
 # Script ausführbar machen (Linux/Mac)
@@ -46,7 +46,7 @@ chmod +x MastodonInstanceAnalyzer.py
 Grundlegende Instanz-Informationen abrufen:
 
 ```bash
-python MastodonInstanceAnalyzer.py https://ihre-instanz.de
+python MastodonInstanceAnalyzer.py https://ifwo.eu
 ```
 
 ### Vollständige Analyse (mit Admin-Token)
@@ -57,16 +57,22 @@ Für detaillierte Account-Statistiken benötigen Sie einen Admin-Token:
 python MastodonInstanceAnalyzer.py https://ihre-instanz.de --token IHR_ADMIN_TOKEN
 ```
 
+Wenn der Admin-Token nicht jedes Mal aufs neue eingegeben werden soll, in ~/.bashrc folgende Zeile hinzufügen:
+
+```bash
+export MASTODON_TOKEN_ADMIN="IHR_TOKEN"
+```
+
 ### Ausgabe in Datei speichern
 
 ```bash
-python MastodonInstanceAnalyzer.py https://ihre-instanz.de --token IHR_TOKEN --output report.txt
+python MastodonInstanceAnalyzer.py https://ifwo.eu --token IHR_TOKEN --output report.txt
 ```
 
 ### JSON-Export
 
 ```bash
-python MastodonInstanceAnalyzer.py https://ihre-instanz.de --token IHR_TOKEN --format json > report.json
+python MastodonInstanceAnalyzer.py https://ifwo.eu --token IHR_TOKEN --format json > report.json
 ```
 
 ## 🔑 Admin-Token erstellen
@@ -88,7 +94,7 @@ Für vollständige Account-Statistiken benötigen Sie einen Admin-Token mit ents
 
 ```
 ======================================================================
-MASTODON INSTANZ ANALYSE: https://ihre-instanz.de
+MASTODON INSTANZ ANALYSE: https://ifwo.eu
 ======================================================================
 
 📊 INSTANZ-INFORMATIONEN
@@ -177,7 +183,7 @@ optional arguments:
 
 - Das Tool greift nur lesend auf die Mastodon-API zu
 - Keine Daten werden an Dritte übermittelt
-- Admin-Token werden nicht gespeichert
+- Admin-Token werden nicht im Script gespeichert
 - Empfehlung: Token nach Verwendung widerrufen oder mit minimalen Berechtigungen erstellen
 
 ## 📄 Lizenz

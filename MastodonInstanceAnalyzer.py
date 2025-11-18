@@ -4,6 +4,7 @@ Mastodon Instance Analyzer
 Analysiert eine Mastodon-Instanz und erstellt detaillierte Statistiken
 """
 
+import os
 import argparse
 import json
 import sys
@@ -15,6 +16,9 @@ from typing import Dict, List, Any
 
 class MastodonAnalyzer:
     def __init__(self, instance_url: str, access_token: str = None):
+        if access_token is None:
+            access_token = os.environ.get("MASTODON_TOKEN_ADMIN")
+
         self.instance_url = instance_url.rstrip('/')
         self.access_token = access_token
         self.headers = {}
